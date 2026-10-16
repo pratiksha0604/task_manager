@@ -1,0 +1,9 @@
+<%= form_with model: @task do |f| %>
+  <% @task.errors.full_messages.each do |msg| %>
+    <p style="color:red"><%= msg %></p>
+  <% end %>
+  <p><%= f.label :title %><br><%= f.text_field :title %></p>
+  <p><%= f.label :description %><br><%= f.text_area :description %></p>
+  <p><%= f.check_box :completed %> <%= f.label :completed %></p>
+  <%= f.submit %>
+<% end %>
